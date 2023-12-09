@@ -24,9 +24,9 @@
     /* Custom*/
     "allowJs": true,
     "baseUrl": "src",
+    "rootDir": "src",
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": "src"
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src"
