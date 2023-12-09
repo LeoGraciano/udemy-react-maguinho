@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "jest --passWithNoTests",
+    "test:watch": "yarn run test -- --watch",
+    "test:staged": "yarn run test -- --findRelatedTests",
+    "test:ci": "yarn run test -- --coverage",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
