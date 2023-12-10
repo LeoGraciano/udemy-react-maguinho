@@ -10,11 +10,12 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
+    extraFileExtensions: [".css", ".svg"],
   },
   plugins: ["react-refresh"],
   rules: {
-    "@typescript-eslint/consistent-type-definitions": false,
-    "@typescript-eslint/strict-boolean-expressions": false,
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
