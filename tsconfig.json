@@ -26,6 +26,9 @@
     "paths": {
       "@/*": [
         "*"
+      ],
+      "@/tests/*": [
+        "../tests/*"
       ]
     },
     "rootDir": "src",
@@ -33,7 +36,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src"
+    "src",
+    "tests"
   ],
   "references": [
     {

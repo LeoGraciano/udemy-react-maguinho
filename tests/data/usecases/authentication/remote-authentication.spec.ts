@@ -1,5 +1,6 @@
 import { HttpStatusCode } from "@/data/protocols/http";
-import { HttpPostClientSpy } from "@/data/test";
+import { RemoteAuthentication } from "@/data/usecases/authentication/remote-authentication";
+
 import {
   InvalidCredentialsError,
   NotFoundError,
@@ -8,10 +9,11 @@ import {
 } from "@/domain/errors";
 import { AccountModel } from "@/domain/models";
 
-import { mockAccountModel, mockAuthentication } from "@/domain/test";
 import { AuthenticationParams } from "@/domain/usecases";
+
+import { HttpPostClientSpy } from "@/tests/data/mock";
+import { mockAccountModel, mockAuthentication } from "@/tests/domain/mock";
 import { faker } from "@faker-js/faker";
-import { RemoteAuthentication } from "./remote-authentication";
 
 type SutTypes = {
   sut: RemoteAuthentication;

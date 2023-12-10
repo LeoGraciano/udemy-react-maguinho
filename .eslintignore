@@ -1,1 +1,11 @@
 vite.config.ts
+jest.config.js
+node_modules
+.vscode
+coverage
+public
+dist
+*.scss
+*.json
+*.css
+*.json
