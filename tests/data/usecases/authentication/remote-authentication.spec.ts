@@ -11,17 +11,17 @@ import { AccountModel } from "@/domain/models";
 
 import { AuthenticationParams } from "@/domain/usecases";
 
-import { HttpPostClientSpy } from "@/tests/data/mock";
+import { HttpPostAdapterSpy } from "@/tests/data/mock";
 import { mockAccountModel, mockAuthentication } from "@/tests/domain/mock";
 import { faker } from "@faker-js/faker";
 
 type SutTypes = {
   sut: RemoteAuthentication;
-  httpPostClientSpy: HttpPostClientSpy<AuthenticationParams, AccountModel>;
+  httpPostClientSpy: HttpPostAdapterSpy<AuthenticationParams, AccountModel>;
 };
 
 const makeSut = (url: string = faker.internet.url()): SutTypes => {
-  const httpPostClientSpy = new HttpPostClientSpy<
+  const httpPostClientSpy = new HttpPostAdapterSpy<
     AuthenticationParams,
     AccountModel
   >();
