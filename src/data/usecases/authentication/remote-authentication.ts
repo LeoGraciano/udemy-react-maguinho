@@ -17,7 +17,7 @@ export class RemoteAuthentication implements Authentication {
     >
   ) {}
 
-  async auth(params: AuthenticationParams): Promise<AccountModel> {
+  async auth(params: AuthenticationParams): Promise<AccountModel | undefined> {
     const httpResponse = await this.httpPostClient.post({
       url: this.url,
       body: params,
