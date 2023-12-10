@@ -24,6 +24,11 @@
     /* Custom*/
     "allowJs": true,
     "baseUrl": "src",
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    },
     "rootDir": "src",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
