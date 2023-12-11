@@ -1,3 +1,4 @@
+import { BackgroundAssociateLogin } from "@/presentation/components/background";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -45,20 +46,7 @@ export default function Login() {
   };
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "#ffcf0f",
-        backgroundImage: `url(https://plt.nauticoclubefronteira.com.br/static/assets/customs/associate/img/splash%20login.png), url(https://plt.nauticoclubefronteira.com.br/static/assets/customs/associate/img/Agrupar_1.png)`,
-        backgroundRepeat: "no-repeat, no-repeat",
-        backgroundPosition: "center, center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
+    <BackgroundAssociateLogin>
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -137,6 +125,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </Box>
+    </BackgroundAssociateLogin>
   );
 }
