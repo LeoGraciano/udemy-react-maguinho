@@ -56,6 +56,7 @@ export const LoginAssociate = () => {
               required
               fullWidth
               id="email"
+              inputProps={{ "data-testid": "email" }}
               label="Email"
               name="email"
               autoComplete="email"
@@ -71,6 +72,7 @@ export const LoginAssociate = () => {
               label="Senha"
               type="password"
               id="password"
+              inputProps={{ "data-testid": "password" }}
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -83,7 +85,7 @@ export const LoginAssociate = () => {
               type="submit"
               fullWidth
               variant="contained"
-              id="submit-login"
+              id="submit"
               sx={{
                 mt: 3,
                 mb: 2,
