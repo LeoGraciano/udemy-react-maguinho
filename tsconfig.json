@@ -1,51 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "Node",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "target": "es6",
     "strict": true,
-    "jsx": "react-jsx",
-    /* Linting */
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    /* Custom*/
-    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "rootDir": "src",
     "baseUrl": "src",
     "paths": {
       "@/*": [
         "*"
-      ],
-      "@/tests/*": [
-        "../tests/*"
       ]
     },
-    "rootDirs": [
-      "src",
-      "tests"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "allowJs": true,
+    "resolveJsonModule": true
   },
   "include": [
-    "src",
-    "tests"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "src/**/*",
+    "tests/**/*"
   ]
 }

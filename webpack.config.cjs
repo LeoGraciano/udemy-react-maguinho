@@ -5,8 +5,8 @@ module.exports = {
   entry: "./src/main/index.tsx",
   output: {
     path: path.join(__dirname, "public/js"),
+    filename: "bundle.js",
     publicPath: "/public/js",
-    filename: "bundle.js ",
   },
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx", "scss", "css"],
@@ -18,11 +18,11 @@ module.exports = {
     rules: [
       {
         test: /\.ts(x?)$/,
-        loader: "ts-loader",
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
-        test: /\.(s?)css$/,
+        test: /\.scss$/,
         use: [
           {
             loader: "style-loader",
@@ -40,6 +40,7 @@ module.exports = {
       },
     ],
   },
+  devtool: "inline-source-map",
   devServer: {
     devMiddleware: {
       writeToDisk: true,
