@@ -1,4 +1,5 @@
-import { BackgroundAssociateLogin } from "@/presentation/components/background";
+import { BackgroundAssociateAccess } from "@/presentation/components/background";
+import { Copyright } from "@/presentation/components/footer/Copyright";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -10,30 +11,8 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { BoxProps } from "@mui/system";
-import * as React from "react";
 
-function Copyright(props: BoxProps) {
-  return (
-    <Box marginTop={2}>
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        align="center"
-        component="span"
-        ref={null}
-        {...props}
-      >
-        {"Copyright © "}
-        <Link color="inherit" href="email:leonardoferreiragraciano@gmail.com">
-          LeoGraciano
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    </Box>
-  );
-}
+import * as React from "react";
 
 export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -46,7 +25,7 @@ export default function Login() {
   };
 
   return (
-    <BackgroundAssociateLogin>
+    <BackgroundAssociateAccess>
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -125,6 +104,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </BackgroundAssociateLogin>
+    </BackgroundAssociateAccess>
   );
 }

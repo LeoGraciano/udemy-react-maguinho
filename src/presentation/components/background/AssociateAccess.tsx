@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import * as React from "react";
 
-export const BackgroundAssociateLogin: React.FC<{
+export const BackgroundAssociateAccess: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (

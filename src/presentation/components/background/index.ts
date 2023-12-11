@@ -1,1 +1,1 @@
-export * from "./AssociateLogin";
+export * from "./AssociateAccess";
