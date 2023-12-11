@@ -1,12 +1,12 @@
+import { AppRouter } from "@/presentation/components/router";
 import { AppThemeProvider } from "@/presentation/contexts";
-import Login from "@/presentation/pages/login/login";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <AppThemeProvider>
-      <Login />
+      <AppRouter />
     </AppThemeProvider>
   </React.StrictMode>
 );

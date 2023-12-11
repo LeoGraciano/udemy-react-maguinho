@@ -1,6 +1,6 @@
 import { BackgroundAssociateAccess } from "@/presentation/components/background";
 import { Copyright } from "@/presentation/components/footer/Copyright";
-import { ReferEarnInfo } from "@/presentation/components/information/ReferEarnInfo";
+import { ReferEarnInfo } from "@/presentation/components/information";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -13,7 +13,7 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import * as React from "react";
+import React from "react";
 
 export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

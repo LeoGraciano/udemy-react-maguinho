@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import { BoxProps } from "@mui/system";
-import * as React from "react";
+import React from "react";
 
 export function Copyright(props: BoxProps) {
   return (
