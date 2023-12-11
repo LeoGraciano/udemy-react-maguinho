@@ -13,10 +13,10 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import React from "react";
+import { FormEvent } from "react";
 
-export default function Login() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+export const LoginAssociate = () => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -102,4 +102,4 @@ export default function Login() {
       </Container>
     </BackgroundAssociateAccess>
   );
-}
+};
