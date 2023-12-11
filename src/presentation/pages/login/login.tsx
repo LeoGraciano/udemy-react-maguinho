@@ -4,11 +4,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { BoxProps } from "@mui/system";
@@ -16,26 +14,25 @@ import * as React from "react";
 
 function Copyright(props: BoxProps) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      component="span"
-      ref={null}
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="email:leonardoferreiragraciano@gmail.com">
-        LeoGraciano
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+    <Box marginTop={2}>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        align="center"
+        component="span"
+        ref={null}
+        {...props}
+      >
+        {"Copyright © "}
+        <Link color="inherit" href="email:leonardoferreiragraciano@gmail.com">
+          LeoGraciano
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    </Box>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
 
 export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -48,12 +45,24 @@ export default function Login() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <Box
+      sx={{
+        backgroundColor: "#ffcf0f",
+        backgroundImage: `url(https://plt.nauticoclubefronteira.com.br/static/assets/customs/associate/img/splash%20login.png), url(https://plt.nauticoclubefronteira.com.br/static/assets/customs/associate/img/Agrupar_1.png)`,
+        backgroundRepeat: "no-repeat, no-repeat",
+        backgroundPosition: "center, center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: -15,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -65,6 +74,12 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Login
           </Typography>
+          <Box marginBottom={1} marginTop={1}>
+            <Typography component="p" textAlign="center" color="secondary.main">
+              Aqui a indicação transforma a sua experiência. Ganhe prêmios,
+              compartilhe alegria e ganhe prêmios
+            </Typography>
+          </Box>
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -92,16 +107,19 @@ export default function Login() {
               autoComplete="current-password"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" />}
               label="Lembrar-me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3,
+                mb: 2,
+              }}
             >
-              Sign In
+              Login
             </Button>
             <Grid container>
               <Grid item xs>
@@ -119,6 +137,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
+    </Box>
   );
 }
