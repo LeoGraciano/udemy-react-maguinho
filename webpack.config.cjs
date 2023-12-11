@@ -49,7 +49,7 @@ module.exports = {
       directory: "./public",
     },
     historyApiFallback: true,
-    port: 8080,
+    port: 8120,
   },
   externals: {
     react: "React",

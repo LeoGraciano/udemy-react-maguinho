@@ -23,14 +23,14 @@ describe("Login", () => {
   });
   test("Shout call test field email", () => {
     const { sut } = makeSut();
-    const emailInput = sut.getByTestId("email") as HTMLInputElement;
+    const emailInput = sut.getByTestId("id_email") as HTMLInputElement;
     const fakeEmail = faker.internet.email();
     fireEvent.change(emailInput, { target: { value: fakeEmail } });
     expect(emailInput.value).toBe(fakeEmail);
   });
   test("Shout call test field password", () => {
     const { sut } = makeSut();
-    const passwordInput = sut.getByTestId("password") as HTMLInputElement;
+    const passwordInput = sut.getByTestId("id_password") as HTMLInputElement;
     const fakePassword = faker.internet.password();
     fireEvent.change(passwordInput, { target: { value: fakePassword } });
     expect(passwordInput.value).toBe(fakePassword);

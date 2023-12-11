@@ -1,6 +1,8 @@
 import { BackgroundAssociateAccess } from "@/presentation/components/background";
 import { Copyright } from "@/presentation/components/footer/Copyright";
 import { ReferEarnInfo } from "@/presentation/components/information";
+import { CustomTextInput } from "@/presentation/components/input";
+
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -10,22 +12,13 @@ import Container from "@mui/material/Container";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { FormEvent, useState } from "react";
+import { Form } from "@unform/web";
+import { useState } from "react";
 
-export const LoginAssociate: React.FC = () => {
+export const LoginAssociate = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
 
   return (
     <BackgroundAssociateAccess>
@@ -45,18 +38,14 @@ export const LoginAssociate: React.FC = () => {
             Login
           </Typography>
           <ReferEarnInfo />
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
+          <Form
+            onSubmit={(data) => console.log(data)}
+            placeholder="Pagina de Login de Associado"
           >
-            <TextField
+            <CustomTextInput
               margin="normal"
               required
               fullWidth
-              id="email"
-              inputProps={{ "data-testid": "email" }}
               label="Email"
               name="email"
               autoComplete="email"
@@ -64,7 +53,7 @@ export const LoginAssociate: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <TextField
+            <CustomTextInput
               margin="normal"
               required
               fullWidth
@@ -90,7 +79,6 @@ export const LoginAssociate: React.FC = () => {
                 mt: 3,
                 mb: 2,
               }}
-              disabled={!email || !password}
             >
               Login
             </Button>
@@ -106,7 +94,7 @@ export const LoginAssociate: React.FC = () => {
                 </Link>
               </Grid>
             </Grid>
-          </Box>
+          </Form>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
