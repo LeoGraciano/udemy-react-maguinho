@@ -12,10 +12,12 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export const LoginAssociate = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -58,6 +60,8 @@ export const LoginAssociate = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -68,6 +72,8 @@ export const LoginAssociate = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" />}
@@ -77,10 +83,12 @@ export const LoginAssociate = () => {
               type="submit"
               fullWidth
               variant="contained"
+              id="submit-login"
               sx={{
                 mt: 3,
                 mb: 2,
               }}
+              disabled={!email || !password}
             >
               Login
             </Button>
