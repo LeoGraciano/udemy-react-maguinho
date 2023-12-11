@@ -14,7 +14,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { FormEvent, useState } from "react";
 
-export const LoginAssociate = () => {
+export const LoginAssociate: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

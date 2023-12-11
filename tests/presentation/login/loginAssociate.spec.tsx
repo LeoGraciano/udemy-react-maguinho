@@ -21,13 +21,18 @@ describe("Login", () => {
   test("Shout call render Login Associate", () => {
     makeSut();
   });
-  test("Shout call test fields and valid", () => {
+  test("Shout call test field email", () => {
     const { sut } = makeSut();
-    const emailInput = sut.getByTestId("email");
-    const passwordInput = sut.getByTestId("password");
-    fireEvent.input(emailInput, { target: { value: faker.internet.email() } });
-    fireEvent.input(passwordInput, {
-      target: { value: faker.internet.password() },
-    });
+    const emailInput = sut.getByTestId("email") as HTMLInputElement;
+    const fakeEmail = faker.internet.email();
+    fireEvent.change(emailInput, { target: { value: fakeEmail } });
+    expect(emailInput.value).toBe(fakeEmail);
+  });
+  test("Shout call test field password", () => {
+    const { sut } = makeSut();
+    const passwordInput = sut.getByTestId("password") as HTMLInputElement;
+    const fakePassword = faker.internet.password();
+    fireEvent.change(passwordInput, { target: { value: fakePassword } });
+    expect(passwordInput.value).toBe(fakePassword);
   });
 });
