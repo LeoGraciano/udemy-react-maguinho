@@ -1,5 +1,6 @@
 import { BackgroundAssociateAccess } from "@/presentation/components/background";
 import { Copyright } from "@/presentation/components/footer/Copyright";
+import { ReferEarnInfo } from "@/presentation/components/information/ReferEarnInfo";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -41,12 +42,7 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Login
           </Typography>
-          <Box marginBottom={1} marginTop={1}>
-            <Typography component="p" textAlign="center" color="secondary.main">
-              Aqui a indicação transforma a sua experiência. Ganhe prêmios,
-              compartilhe alegria e ganhe prêmios
-            </Typography>
-          </Box>
+          <ReferEarnInfo />
           <Box
             component="form"
             onSubmit={handleSubmit}
